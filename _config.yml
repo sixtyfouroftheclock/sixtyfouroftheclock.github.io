@@ -1,0 +1,4 @@
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "sixtyfour o' clock" # the name of your site, e.g. ACME Corp.
+description: "Well... generic stuff about programming, modeling and games. If you hate this kind of stuff, just leave this blog."

@@ -1,0 +1,227 @@
+
+    :root {
+      --color-bg: linear-gradient(#191932, #200c28);
+      --color-surface: #1e1e3c;
+      --color-text: #ffffff;
+      --color-text-subtle: #dddddd;
+      --color-text-muted: #bbbbbb;
+      --color-accent: #ffcc00;
+      --color-post-bg: rgba(255, 255, 255, 0.05);
+      --color-comment-bg: rgba(255, 255, 255, 0.08);
+      --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.25);
+      --shadow-medium: 0 2px 10px rgba(0, 0, 0, 0.3);
+      --radius: 10px;
+      --padding-post: 20px 30px;
+      --font-base: 'JetBrains Mono', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 1200px;
+      min-height: 100vh;
+      font-family: var(--font-base);
+      font-size: 16px;
+      line-height: 1.6;
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+
+    a {
+      color: var(--color-text);
+      text-decoration: underline;
+      transition: color 0.1s ease-in;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--color-accent);
+      outline: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Layout grid */
+    #content {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      grid-template-areas:
+        "header sidebar"
+        "main sidebar"
+        "footer footer";
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header#header {
+      grid-area: header;
+      overflow: auto;
+    }
+    header#header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    main#main {
+      grid-area: main;
+    }
+
+    aside#sidebar {
+      grid-area: sidebar;
+      width: 100%;
+      color: var(--color-text-subtle);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    footer#footer {
+      grid-area: footer;
+      text-align: center;
+      opacity: 0.6;
+      font-style: italic;
+      user-select: none;
+      margin-top: 30px;
+    }
+
+    #description {
+      margin-top: 0.25em;
+      color: var(--color-text-subtle);
+      font-style: italic;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--color-post-bg);
+      border-radius: var(--radius);
+      padding: var(--padding-post);
+      box-shadow: var(--shadow-small);
+      transition: background 0.3s ease;
+      --mouse-x: 50%;
+      --mouse-y: 50%;
+    }
+
+    .card:hover {
+      background: radial-gradient(
+        circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.15),
+        rgba(255, 255, 255, 0)
+      );
+    }
+
+    /* Post styles */
+    .post {
+      margin-bottom: 30px;
+      max-height: 100em;
+      overflow: auto;
+    }
+
+    .post-title {
+      margin: 0 0 15px;
+      font-weight: 700;
+    }
+
+    .post-body {
+      margin-bottom: 15px;
+    }
+
+    .post-footer {
+      font-size: 0.9em;
+      color: var(--color-text-muted);
+    }
+
+    .post-footer time {
+      opacity: 0.7;
+    }
+
+    .comment-link {
+      color: var(--color-text-muted);
+      margin-left: 10px;
+    }
+    .comment-link:hover {
+      color: var(--color-accent);
+    }
+
+    /* Comments */
+    #comments {
+      margin-top: 40px;
+    }
+
+    .comments-title {
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .comment-data {
+      font-weight: bold;
+      color: var(--color-text-muted);
+      margin-top: 20px;
+    }
+
+    .comment-body {
+      margin: 10px 0 20px;
+      padding: 15px;
+      border-radius: 6px;
+      background: var(--color-comment-bg);
+      color: #eee;
+      box-shadow: var(--shadow-small);
+    }
+
+    .comment-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .comment-text {
+      flex: 1;
+      white-space: pre-wrap;
+    }
+
+    /* Code highlight */
+    pre code.hljs {
+      display: block;
+      padding: 1em;
+      background: #ffffff !important;
+      color: #000000;
+      border-radius: var(--radius);
+      overflow-x: auto;
+      font-family: var(--font-base);
+      line-height: 1.5;
+      box-shadow: var(--shadow-medium);
+    }
+
+    /* Sidebar */
+    .sidebar-title {
+      font-weight: 600;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+      margin-top: 1em;
+    }
+    
+    #sidebar
+    {
+      margin-bottom: auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      #content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+    }

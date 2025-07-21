@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<article class="post card" id="post-{{ page.id | default: page.slug }}">
+  <header>
+    <h2 class="post-title">{{ page.title }}</h2>
+  </header>
+
+  <section class="post-body">
+    {{ content }}
+  </section>
+
+  <footer class="post-footer">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+  </footer>
+</article>
