@@ -7,8 +7,10 @@
   <title>{{ page.title | default: site.title }}</title>
   <link rel="icon" type="image/png" href="{{ "/assets/your-wilderness.ico" }}" />
 
-  <meta name="description" content="{{ site.description }}" />
-  <meta name="keywords" content="C++, 3D modeling, game development, programming, graphics, software engineering" />
+  <meta name="description" content="{{ page.description }}" />
+  {% if page.tags %}
+  <meta name="keywords" content="{{ page.tags | join: ', ' }}">
+  {% endif %}
   <meta name="author" content="Maurício" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 

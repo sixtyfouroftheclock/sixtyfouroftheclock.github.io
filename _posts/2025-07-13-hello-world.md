@@ -1,7 +1,8 @@
 ---
 title: "Hello, world!"
 layout: post
-tags: c, cpp
+tags: [c, cpp]
+descritpion: "This is my first post!"
 date: 2025-07-13
 ---
 
