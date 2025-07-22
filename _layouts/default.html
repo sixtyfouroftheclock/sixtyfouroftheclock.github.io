@@ -18,24 +18,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
 
-  <style>
-    :root {
+  <style>:root {
   --color-bg: linear-gradient(#191932, #200c28);
   --color-surface: #1e1e3c;
-  --color-text: #ffffff;
-  --color-text-subtle: #dddddd;
-  --color-text-muted: #bbbbbb;
+  --color-text: #fff;
+  --color-text-subtle: #ddd;
+  --color-text-muted: #bbb;
   --color-accent: #ffcc00;
-  --color-post-bg: rgba(255, 255, 255, 0.05);
-  --color-comment-bg: rgba(255, 255, 255, 0.08);
-  --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.25);
-  --shadow-medium: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --color-post-bg: rgba(255,255,255,0.05);
+  --color-comment-bg: rgba(255,255,255,0.08);
+  --shadow-small: 0 2px 8px rgba(0,0,0,0.25);
+  --shadow-medium: 0 2px 10px rgba(0,0,0,0.3);
   --radius: 10px;
   --padding-post: 20px 30px;
   --font-base: 'JetBrains Mono', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -56,9 +55,7 @@ a {
   text-decoration: underline;
   transition: color 0.1s ease-in;
 }
-
-a:hover,
-a:focus {
+a:hover, a:focus {
   color: var(--color-accent);
   outline: none;
 }
@@ -69,12 +66,11 @@ img {
   height: auto;
   margin: 0 auto 15px;
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
   pointer-events: none;
   user-select: none;
 }
 
-/* Layout grid */
 #content {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -86,29 +82,19 @@ img {
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-
 }
 
 header#header {
-    align-self: start;
   grid-area: header;
-  /* overflow: auto; */
 }
 header#header h1 {
   font-size: 3em;
   margin: 0;
 }
 
-/* main#main {
-  grid-area: main;
-} */
-
 aside#sidebar {
   grid-area: sidebar;
-  width: 100%;
   color: var(--color-text-subtle);
-  margin-left: auto;
-  margin-right: auto;
 }
 
 footer#footer {
@@ -126,42 +112,31 @@ footer#footer {
   font-style: italic;
 }
 
-/* Cards */
+/* Card */
 .card {
+  width: 100%;
   background: var(--color-post-bg);
   border-radius: var(--radius);
   padding: var(--padding-post);
   box-shadow: var(--shadow-small);
-  transition: background 0.3s ease;
-  --mouse-x: 50%;
-  --mouse-y: 50%;
-
-  /* Added */
-  display: flex;
-  flex-direction: column;
-  min-height: 180px;
   overflow: hidden;
-  box-sizing: border-box;
+  display: block;
 }
 
+/* Hover light effect */
 .card:hover {
   background: radial-gradient(
-    circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.15),
-    rgba(255, 255, 255, 0)
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255,255,255,0.15),
+    rgba(255,255,255,0)
   );
 }
 
-/* Post styles */
+/* Post */
 .post {
   margin-bottom: 30px;
-  max-height: 100em;
-  overflow: auto;
-
-  /* Added */
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  display: block;
+  overflow-wrap: break-word;
 }
 
 .post-title {
@@ -171,13 +146,14 @@ footer#footer {
 
 .post-body {
   margin-bottom: 15px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .post-footer {
   font-size: 0.9em;
   color: var(--color-text-muted);
 }
-
 .post-footer time {
   opacity: 0.7;
 }
@@ -198,7 +174,7 @@ footer#footer {
 .comments-title {
   margin-bottom: 20px;
   padding-bottom: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .comment-data {
@@ -227,23 +203,32 @@ footer#footer {
   white-space: pre-wrap;
 }
 
-/* Code highlight */
-pre code.hljs {
-  display: block;
+/* Highlighted Code */
+/* pre {
+  margin: 0;
   padding: 1em;
-  background: #ffffff !important;
-  color: #000000;
-  border-radius: var(--radius);
+  width: 100%;
+  max-width: 100%;
   overflow-x: auto;
+  background: #fff !important;
+  color: #000;
   font-family: var(--font-base);
-  line-height: 1.5;
   box-shadow: var(--shadow-medium);
+} */
+
+pre code.hljs {
+  border-radius: var(--radius);
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  line-height: 1.5;
 }
 
 /* Sidebar */
 .sidebar-title {
   font-weight: 600;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 2px solid rgba(255,255,255,0.25);
   margin-top: 1em;
 }
 
@@ -259,17 +244,16 @@ pre code.hljs {
     gap: 30px;
   }
 
-  /* Reset added flex styles on mobile for natural sizing */
   .card {
     min-height: auto;
     overflow: visible;
-    display: block;
   }
-  
+
   .post {
     flex-grow: 0;
   }
 }
+
 
   </style>
 
