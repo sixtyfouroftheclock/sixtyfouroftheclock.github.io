@@ -6,6 +6,7 @@
   <meta charset="UTF-8" />
   <title>{{ page.title | default: site.title }}</title>
   <link rel="icon" type="image/png" href="{{ "/assets/your-wilderness.ico" }}" />
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
 
   <meta name="description" content="{{ page.description }}" />
   {% if page.tags %}
@@ -128,8 +129,9 @@ footer#footer {
 
 /* Hover light effect */
 .card:hover {
+  transition: background 0.3s ease;
   background: radial-gradient(
-    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    circle 50vh at var(--mouse-x, 50%) var(--mouse-y, 50%),
     rgba(255,255,255,0.15),
     rgba(255,255,255,0)
   );
@@ -206,6 +208,41 @@ footer#footer {
   white-space: pre-wrap;
 }
 
+.post.card header
+{
+  text-align: center ;
+  margin: auto;
+  display: block;
+  max-width: 75%;
+}
+
+blockquote
+{
+  background: var(--color-comment-bg);
+  padding: 10px 30px;
+  border-left: solid rgba(0, 0, 0, 0.431) 3em;
+}
+
+blockquote, .language-plaintext.highlighter-rouge, pre code.hljs
+{
+box-shadow: inset 0px 3px 7px rgba(19, 6, 0, 0.556);
+border-radius: var(--radius);
+}
+
+::selection {
+  background: #e2e1eb7c;
+  color: #270a39;
+  border-radius: 10px;
+}
+
+.language-plaintext.highlighter-rouge
+{
+padding: 1px 4px;
+border-radius: var(--radius);
+
+background-color: rgb(47, 43, 47);
+}
+
 /* Highlighted Code */
 /* pre {
   margin: 0;
@@ -260,23 +297,42 @@ pre code.hljs {
 
   </style>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let mouseX = null;
+    let mouseY = null;
+
+    const updateCardMousePosition = () => {
+      if (mouseX === null || mouseY === null) return;
+
       document.querySelectorAll('.card').forEach(el => {
-        el.addEventListener('mousemove', e => {
-          const rect = el.getBoundingClientRect();
-          const x = ((e.clientX - rect.left) / rect.width) * 100;
-          const y = ((e.clientY - rect.top) / rect.height) * 100;
-          el.style.setProperty('--mouse-x', `${x}%`);
-          el.style.setProperty('--mouse-y', `${y}%`);
-        });
-        el.addEventListener('mouseleave', () => {
-          el.style.setProperty('--mouse-x', `50%`);
-          el.style.setProperty('--mouse-y', `50%`);
-        });
+        const rect = el.getBoundingClientRect();
+        const x = ((mouseX - rect.left) / rect.width) * 100;
+        const y = ((mouseY - rect.top) / rect.height) * 100;
+        el.style.setProperty('--mouse-x', `${x}%`);
+        el.style.setProperty('--mouse-y', `${y}%`);
+      });
+    };
+
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      updateCardMousePosition();
+    });
+
+    window.addEventListener('scroll', () => {
+      updateCardMousePosition();
+    });
+
+    document.querySelectorAll('.card').forEach(el => {
+      el.addEventListener('mouseleave', () => {
+        el.style.setProperty('--mouse-x', `50%`);
+        el.style.setProperty('--mouse-y', `50%`);
       });
     });
-  </script>
+  });
+</script>
+
 </head>
 <body>
   <div id="content">
