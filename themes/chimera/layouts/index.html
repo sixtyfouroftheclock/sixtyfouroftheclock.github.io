@@ -5,10 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>64::00</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <p>To be build</p>
+    <main>
+        <div id="articles">
+            <h1> Posts </h1>
+            {{ range .Site.RegularPages }}
+            <article>
+                <header>
+                    {{ .Title }} {{ .Date | time.Format ":date_medium" }}
+                </header>
+                {{ .Content }}
+            </article>
+            {{ end }}
+        </div>
+    </main>
 </body>
 
 </html>
