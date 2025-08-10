@@ -1,0 +1,59 @@
+body {
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    display: flex;
+}
+
+pre {
+    background-color: black;
+    padding: 10px;
+    overflow: scroll;
+    max-height: 50vh;
+}
+
+#articles,
+#home,
+#forty4,
+main#article {
+    width: 500px;
+}
+
+article {
+    padding: 10px;
+    margin: 10px;
+    max-height: 500px;
+    overflow: scroll;
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+}
+
+a {
+    color: black;
+}
+
+#sidebar {
+    padding: 30px;
+    max-width: 100px;
+    height: 400px;
+    overflow: scroll;
+    text-align: center;
+}
+
+#sidebar img {
+    width: 90px;
+}
+
+article img {
+    width: 100%;
+}
+
+main header {
+    text-align: center;
+}
+
+main {
+    border-left: dashed 1px black;
+    margin: 0 10px;
+    padding: 30px;
+}

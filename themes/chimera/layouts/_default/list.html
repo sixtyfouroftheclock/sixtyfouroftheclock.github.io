@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>64::Posts</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+    {{ partial "sidebar" . }}
+    <main id="articles">
+        <header>
+            <h1 style="text-align: center;"> Posts </h1>
+        </header>
+        {{ range .Site.RegularPages }}
+        <article>
+            <header>
+                <h1> <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> </h1>
+                <small> {{ .Date | time.Format ":date_medium" }} | {{.Lastmod | time.Format ":date_medium" }} </small>
+            </header>
+            {{ .Content }}
+        </article>
+        {{ end }}
+    </main>
+</body>
+
+</html>
