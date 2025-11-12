@@ -1,5 +1,4 @@
-html, body
-{
+html, body {
     margin: 0;
     height: 100%;
 }
@@ -8,17 +7,82 @@ body {
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
-    background-position: center;
-    background-image: url(/assets/fend_your_self_wide.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    justify-content: left;
+
+    background: url(/assets/fend_your_self_wide.png) center / cover no-repeat;
+    background-attachment: fixed;
+}
+
+main {
+    border-left: 1px dashed white;
+    margin: 20px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    max-width: 650px;
+}
+
+main header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+article {
+    padding: 10px 0;
+    margin: 20px 0;
+    border-top: 1px dashed white;
+    border-bottom: 1px dashed white;
+    overflow-y: auto;
+    max-height: 500px;
+    scrollbar-width: thin;
 }
 
 pre {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
-    overflow: scroll;
+    overflow: auto;
     max-height: 50vh;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+article img {
+    margin: 10px 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(255,255,255,0.5);
+    transition: border-color 0.2s, color 0.2s;
+}
+
+a:hover {
+    color: #ddd;
+    border-color: white;
+}
+
+#sidebar {
+    padding: 30px;
+    max-width: 120px;
+    overflow-y: auto;
+    text-align: center;
+    margin: 20px;
+    border-right: 1px dashed white;
+    background-color: rgba(0,0,0,.5)
+}
+
+#sidebar img {
+    width: 90px;
+    margin-bottom: 10px;
 }
 
 #articles,
@@ -28,52 +92,30 @@ main#article {
     width: 500px;
 }
 
-img {
-    max-width: 600px;
-}
-
-article {
-    padding: 10px;
-    margin: 10px;
+#latestpost {
     max-height: 500px;
-    overflow: scroll;
-    border-top: 1px dashed white;
-    border-bottom: 1px dashed white;
+    overflow-y: auto;
 }
 
-a {
-    color: white;
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
 }
 
-#sidebar {
-    padding: 30px;
-    max-width: 100px;
-    height: 400px;
-    overflow: scroll;
-    text-align: center;
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
 }
 
-#sidebar img {
-    width: 90px;
+*::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
-article img {
-    width: 100%;
+*::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-main header {
-    text-align: center;
-}
-
-main {
-    border-left: dashed 1px white;
-    margin: 10px;
-    padding: 30px;
-    background-color: rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-}
-#latestpost
-{
-    
-    max-height: 500px;
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
