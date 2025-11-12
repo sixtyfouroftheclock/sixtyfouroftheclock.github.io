@@ -35,6 +35,13 @@
                 {{ .Date | time.Format ":date_medium" }} | {{ .Lastmod | time.Format ":date_medium" }}
             {{ end }}
             </small>
+            {{ with .Params.tags }}
+            <p class="tags">
+                {{ range . }}
+                    <a href="{{ "tags/" | relURL }}{{ . | urlize }}">#{{ . }}</a>
+                {{ end }}
+            </p>
+            {{ end }}
         </header>
         {{ .Content }}
     </article>
