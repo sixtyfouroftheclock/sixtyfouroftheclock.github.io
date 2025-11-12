@@ -18,7 +18,7 @@ main {
     margin: 20px;
     padding: 30px;
     backdrop-filter: blur(3px);
-    background-color: rgba(0,0,20,0.05);
+    background-color: rgba(87, 87, 104, 0.25);
     overflow-y: auto;
     overflow-x: auto;
     scrollbar-width: thin;
@@ -79,7 +79,7 @@ a:hover {
     margin: 20px;
     border-right: 1px dashed white;
     backdrop-filter: blur(3px);
-    background-color: rgba(0,0,20,0.05);
+    background-color: rgba(87, 87, 104, 0.25);
     border-radius: 10px
 }
 
