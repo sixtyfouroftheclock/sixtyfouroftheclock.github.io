@@ -14,6 +14,6 @@ It's a pretty simple terminal emulator. Using PowerShell as default, it was fast
 - [Alacritty home](https://alacritty.org/)
 - [Alacritty requirements](https://github.com/alacritty/alacritty?tab=readme-ov-file#requirements)
 
-It fixes most of problems I've ever had in CMD/PowerShell in Windows. You should Try it out! You may be surprised if you use it!
+It fixes most of problems I've ever had in CMD/PowerShell. You should try it out! You may be surprised if you use it!
 
 [^terminalwindows]: [Console-host - AKA Command Prompt and/or Powershell](https://learn.microsoft.com/en-us/windows/console/definitions#console-host)
