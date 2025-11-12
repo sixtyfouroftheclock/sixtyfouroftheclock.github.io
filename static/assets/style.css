@@ -19,6 +19,10 @@ main#article {
     width: 500px;
 }
 
+img {
+    max-width: 600px;
+}
+
 article {
     padding: 10px;
     margin: 10px;
