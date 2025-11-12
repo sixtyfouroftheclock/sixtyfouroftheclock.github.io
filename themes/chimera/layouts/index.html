@@ -20,11 +20,11 @@
         </p>
         <a href="/personal-posts">Personal posts</a>
         <a href="/it-posts/">IT posts</a>
-        <div>
+        <div style="max-height: 500px; overflow: scroll;">
             <h2>Latest posts</h2>
             
             {{ range .Site.RegularPages }}
-            <article style="max-height: 400px;">
+            <article>
                 <header>
                     <h1> <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> </h1>
                     <small>
