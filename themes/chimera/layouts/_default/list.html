@@ -14,7 +14,7 @@
         <header>
             <h1 style="text-align: center;"> Posts </h1>
         </header>
-        {{ range .Site.RegularPages }}
+        {{ range .Pages }}
         <article>
             <header>
                 <h1> <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> </h1>
