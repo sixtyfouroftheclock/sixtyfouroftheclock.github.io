@@ -9,7 +9,7 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
     background-position: center;
-    background-image: url(/assets/fend_your_self_blur.png);
+    background-image: url(/assets/fend_your_self_wide.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
