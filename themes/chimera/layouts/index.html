@@ -20,6 +20,26 @@
         </p>
         <a href="/personal-posts">Personal posts</a>
         <a href="/it-posts/">IT posts</a>
+        <div>
+            <h2>Latest posts</h2>
+            
+            {{ range .Site.RegularPages }}
+            <article style="max-height: 400px;">
+                <header>
+                    <h1> <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> </h1>
+                    <small>
+                    {{ if eq .Date .Lastmod }}
+                        {{ .Date | time.Format ":date_medium" }}
+                    {{ else }}
+                        {{ .Date | time.Format ":date_medium" }} | {{.Lastmod | time.Format ":date_medium" }}
+                    {{ end }}
+                    </small>
+                </header>
+                {{ .Content }}
+            </article>
+            {{ end }}
+
+        </div>
     </main>
 </body>
 
