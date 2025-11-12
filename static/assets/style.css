@@ -37,9 +37,8 @@ article {
     margin: 10px;
     max-height: 500px;
     overflow: scroll;
-    border-top: 1px dashed black;
-    border-color: white;
-    border-bottom: 1px dashed black;
+    border-top: 1px dashed white;
+    border-bottom: 1px dashed white;
 }
 
 a {
@@ -67,10 +66,9 @@ main header {
 }
 
 main {
-    border-left: dashed 1px black;
+    border-left: dashed 1px white;
     margin: 10px;
     padding: 30px;
-    border-color: white;
     background-color: rgba(0, 0, 0, 0.4);
     overflow: hidden;
 }
