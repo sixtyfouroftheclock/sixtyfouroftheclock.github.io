@@ -38,7 +38,7 @@
             {{ with .Params.tags }}
             <p class="tags">
                 {{ range . }}
-                    <a href="{{ "tags/" | relURL }}{{ . | urlize }}">#{{ . }}</a>
+                    <a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
                 {{ end }}
             </p>
             {{ end }}

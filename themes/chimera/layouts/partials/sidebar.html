@@ -1,4 +1,13 @@
 <aside id="sidebar">
     <img src="/assets/your-wilderness.ico">
     <a href="/">sixtyfour</a>
+    {{ range .Pages }}
+        {{ with .Params.tags }}
+        <p class="tags">
+            {{ range . }}
+                <a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        </p>
+        {{ end }}
+    {{ end }}
 </aside>
