@@ -1,11 +1,15 @@
-body {
-    color: black;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+html, body
+{
     margin: 0;
     height: 100%;
+}
+
+body {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
     background-position: center;
-    background-image: url(/assets/fend_your_blur.png);
+    background-image: url(/assets/fend_your_self_blur.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -34,11 +38,12 @@ article {
     max-height: 500px;
     overflow: scroll;
     border-top: 1px dashed black;
+    border-color: white;
     border-bottom: 1px dashed black;
 }
 
 a {
-    color: black;
+    color: white;
 }
 
 #sidebar {
@@ -63,6 +68,13 @@ main header {
 
 main {
     border-left: dashed 1px black;
-    margin: 0 10px;
+    margin: 10px;
     padding: 30px;
+    border-color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+#latestpost
+{
+    max-height: 500px;
 }

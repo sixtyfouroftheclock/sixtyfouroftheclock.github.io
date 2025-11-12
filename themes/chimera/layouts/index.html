@@ -20,26 +20,27 @@
         </p>
         <a href="/personal-posts">Personal posts</a>
         <a href="/it-posts/">IT posts</a>
-        <div style="max-height: 500px; overflow: scroll;">
-            <h2>Latest posts</h2>
-            
-            {{ range .Site.RegularPages }}
-            <article>
-                <header>
-                    <h1> <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> </h1>
-                    <small>
-                    {{ if eq .Date .Lastmod }}
-                        {{ .Date | time.Format ":date_medium" }}
-                    {{ else }}
-                        {{ .Date | time.Format ":date_medium" }} | {{.Lastmod | time.Format ":date_medium" }}
-                    {{ end }}
-                    </small>
-                </header>
-                {{ .Content }}
-            </article>
-            {{ end }}
 
-        </div>
+    <h2>Latest post</h2>
+
+    {{ with first 1 (sort .Site.RegularPages "Date" "desc") }}
+    {{ range . }}
+    <article #latestpost>
+        <header>
+            <h1><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h1>
+            <small>
+            {{ if eq .Date .Lastmod }}
+                {{ .Date | time.Format ":date_medium" }}
+            {{ else }}
+                {{ .Date | time.Format ":date_medium" }} | {{ .Lastmod | time.Format ":date_medium" }}
+            {{ end }}
+            </small>
+        </header>
+        {{ .Content }}
+    </article>
+    {{ end }}
+    {{ end }}
+
     </main>
 </body>
 
