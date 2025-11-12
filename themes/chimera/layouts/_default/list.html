@@ -18,7 +18,13 @@
         <article>
             <header>
                 <h1> <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> </h1>
-                <small> {{ .Date | time.Format ":date_medium" }} | {{.Lastmod | time.Format ":date_medium" }} </small>
+                <small>
+                {{ if eq .Date .Lastmod }}
+                    {{ .Date | time.Format ":date_medium" }}
+                {{ else }}
+                    {{ .Date | time.Format ":date_medium" }} | {{.Lastmod | time.Format ":date_medium" }}
+                {{ end }}
+                </small>
             </header>
             {{ .Content }}
         </article>
