@@ -1,13 +1,19 @@
 <aside id="sidebar">
     <a href="/"><img src="/assets/your-wilderness.png"></a>
     <a href="/">sixtyfour</a>
+    {{/* collect all tags */}}
+    {{ $all := slice }}
     {{ range .Pages }}
         {{ with .Params.tags }}
-        <p class="tags">
-            {{ range . }}
-                <a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
-            {{ end }}
-        </p>
+            {{ $all = $all | append . }}
         {{ end }}
     {{ end }}
+    {{/* flatten + remove duplicates */}}
+    {{ $all = $all | flatten | uniq }}
+
+    <p class="tags">
+        {{ range $all }}
+            <a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+        {{ end }}
+    </p>
 </aside>
