@@ -1,13 +1,17 @@
 <aside id="sidebar">
     <a href="/"><img src="/assets/your-wilderness.png"></a>
     <a href="/">sixtyfour</a>
+
     {{ $all := slice }}
     {{ range .Pages }}
         {{ with .Params.tags }}
-            {{ $all = $all | append . }}
+            {{ range . }}
+                {{ $all = $all | append . }}
+            {{ end }}
         {{ end }}
     {{ end }}
-    {{ $all = $all | flatten | uniq }}
+
+    {{ $all = $all | uniq | sort }}
 
     <p class="tags">
         {{ range $all }}
