@@ -5,7 +5,7 @@ description: "I am a failure, and it's OK."
 tags: [thoughts]
 ---
 
-<img width="925" height="122" alt="image" src="https://github.com/user-attachments/assets/7450c030-21c3-4ac7-a003-eb320420d33c" />
+![Comment in Opeth](/assets/opeth_comment_0.png)
 
 # Hello, again.
 
@@ -21,8 +21,8 @@ to smile at her, saying "we should smile", "forget about it". Even I can't do th
 Worst thing is my family don't seem to care about our situation.
 They say we need psychologists, but, why exactly? Healthcare, mindcare, learning... this starts at home, not by third party.
 Sister had hugged me, that was a strange feeling. I've never got that real comfort from anyone since I was a little kid.
-Always had expressed me bad, whining, feeling down, closing myself. Parents ask why I don't open myself to her.
-Because I'm afraid she would critice me, as once they did this to me.
+Always had expressed me bad, whining, feeling down, closing myself. Parents ask why I don't open myself to them.
+Because I'm afraid they would critice me, as once they did this to me.
 
 Doing this is weird.
 I yell at people.
