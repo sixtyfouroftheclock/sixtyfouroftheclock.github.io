@@ -3,3 +3,8 @@ languageCode = 'en'
 title = "sixtyfour o'clock"
 theme = 'chimera'
 enableRobotsTXT = true
+
+[sitemap]
+  filename = "sitemap.xml"
+  changefreq = "monthly"
+  priority = 0.5
