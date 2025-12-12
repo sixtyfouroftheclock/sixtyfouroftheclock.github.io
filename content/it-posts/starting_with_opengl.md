@@ -1,21 +1,36 @@
 ---
 title: "Starting with OpenGL"
 date: 2025-12-08
+lastmod: '2025-12-12'
 description: "We're gonna learn about OpenGL in this article!"
 tags: ['c', 'cpp', 'opengl']
 ---
+
+(I am still updating this article. I wanna make it simple, understandable)
 
 Hello, again.
 
 # Whatta heck is OpenGL?
 
-If this post reached you, probably it's because you wanna learn OpenGL, or you don't know what this word means.
-OpenGL lets programmers mess with graphics. Allowing creating,
-programs like Blender[^blenderrequirements], FreeCAD[^freecadopengl], or games, such as Minecraft[^minecraftrequirements].
+## Easy way
 
-Itself is just a specification[^openglspecification], a standard. That means, in another words,
-"HEY! WE, FROM KHRONOS[^khronos], HAVE CREATED THIS PROJECT CALLED OPENGL!
-IT'S FREE! BUT YOU HAVE TO IMPLEMENT IT FOR YOUR GRAPHICS CARD!". Then, the OS have to find all the OpenGL's function addresses.
+OpenGL is a software that lets programmers play with graphics directly easily. Allowing creating
+programs like Blender[^blenderrequirements], FreeCAD[^freecadopengl], or games, such as Minecraft[^minecraftrequirements].
+Itself is just a specification[^openglspecification] - mostly implemented in your graphics card driver.
+
+If your graphics card and its driver supports OpenGL 3.3, it CAN NOT be upgrade or run OpenGL 4.6 using the native way[openglcantupgrade].
+Because, 4.6 version is, in a way, "burnt" to the graphics card[graphics_card_instructions]. You can emulate it, but it's gonna lose performance.
+
+This is the top information about OpenGL. OpenGL is complex, not as much as [vulkan](https://vulkan.org/), but it still is.
+
+## Hard way
+
+OpenGL is a specification[^openglspecification] which lets you control.
+
+Graphics card drivers read its instructions and translate them into something programmers can use easily.
+
+That means, in another words,
+
 
 # Using OpenGL with C/C++ (for programmers)
 
@@ -55,3 +70,5 @@ To be continued. Too tired.
 [^khronos]: The organization behind OpenGL. https://khronos.org/
 [^freecadopengl]: FreeCAD Display settings shows use OpenGL instead of CPU https://wiki.freecad.org/Preferences_Editor#Display
 [^openglmainimplementationlanguage]: Most of times OpenGL is implemented in C (missing source)
+[openglcantupgrade]: No reference yet
+[graphics_card_instructions]: https://en.wikipedia.org/wiki/Instruction_set_architecture
