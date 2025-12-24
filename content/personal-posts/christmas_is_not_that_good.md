@@ -1,7 +1,8 @@
 ---
-date: '2025-12-24'
-title: 'christmas isn't that good.'
-tags: ['news', 'christmas']
+title: "Giving name to things sucks"
+date: 2025-12-24
+descritpion: "Christmas isn't that good."
+tags: ['thoughts', 'news', 'christmas']
 ---
 
 <img alt="Screenshot From 2025-12-24 21-55-31" src="https://github.com/user-attachments/assets/c33605fa-9c7e-4dee-ae76-038bdfe70987"/>
